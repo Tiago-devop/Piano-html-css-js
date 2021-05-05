@@ -1,12 +1,12 @@
 const keys = document.querySelectorAll(".octave > div");
 
-function unmark() {
-  console.log("unmark");
+function unmark(key) {
+  key.classList.remove("selected");
 }
 
 keys.forEach(function (key) {
   key.onmousedown = function () {
-    console.log("mark");
+    key.classList.add("selected");
   };
 
   key.onmouseup = () => unmark(key);
